@@ -71,9 +71,9 @@ $('#submit').on('click', function (event) {
         destination: dest,
         arrival: nextTrainFormat,
         minutesAway: tMinutesTillTrain,
-       
+        frequency: freq 
     });
-    alert("Employee successfully added");
+    alert("Train successfully added");
 });
 
 /*=====================================================*/
