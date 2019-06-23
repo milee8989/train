@@ -73,6 +73,7 @@ $('#submit').on('click', function (event) {
         minutesAway: tMinutesTillTrain,
        
     });
+    alert("Employee successfully added");
 });
 
 /*=====================================================*/
@@ -81,12 +82,18 @@ database.ref('/trainSchedule').on('child_added', function (childSnapshot) {
 
     var tBody = $("#tbody");
     var tRow = $('<tr>');
+
     var tdTName = $('<td>').text(childSnapshot.val().trainName);
+
     var tdDestination = $('<td>').text(childSnapshot.val().destination);
+
     var tdFrequency = $('<td>').text(childSnapshot.val().frequency);
+
     var tdArrival = $('<td>').text(childSnapshot.val().arrival);
+
     var tdMinutesAway = $('<td>').text(childSnapshot.val().minutesAway);
-    tRow.append(tdTName, tdArrival, tdDestination, tdFrequency, tdMinutesAway);
+
+    tRow.append(tdTName, tdDestination, tdArrival,tdFrequency,tdMinutesAway);
     tBody.append(tRow);
 
 
